@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIF Splitter</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>GIF Splitter</h1>
+      <p class="subtitle">Upload an animated GIF and split it into a grid</p>
+
+      <!-- Controls -->
+      <div class="controls">
+        <div class="control-group">
+          <label for="cols">Columns</label>
+          <select id="cols">
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="rows">Rows</label>
+          <select id="rows">
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Upload area -->
+      <div class="upload-area" id="uploadArea">
+        <input type="file" id="fileInput" accept="image/gif" hidden />
+        <div class="upload-content">
+          <div class="upload-icon">&#128444;</div>
+          <p>Drop a GIF here or click to upload</p>
+        </div>
+      </div>
+
+      <!-- Preview -->
+      <div class="preview-section" id="previewSection" hidden>
+        <h2>Preview</h2>
+        <div class="preview-container" id="previewContainer">
+          <img id="previewImg" alt="GIF preview" />
+          <div class="grid-overlay" id="gridOverlay"></div>
+        </div>
+        <button class="btn-split" id="splitBtn">Split GIF</button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-section" id="progressSection" hidden>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p class="progress-text" id="progressText">Processing...</p>
+      </div>
+
+      <!-- Results -->
+      <div class="results-section" id="resultsSection" hidden>
+        <h2>Results</h2>
+        <div class="results-grid" id="resultsGrid"></div>
+        <button class="btn-download-all" id="downloadAllBtn">Download All (ZIP)</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
